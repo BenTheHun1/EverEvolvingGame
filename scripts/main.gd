@@ -254,10 +254,12 @@ func _on_save_button_up():
 	save_game.close()
 
 func _on_load_button_up():
-	$HUD/upgrade_bg/boop.play()
+	#$HUD/upgrade_bg/boop.play()
 	var save_game = File.new()
 	if not save_game.file_exists("user://savegame.save"):
+		print("No save file found")
 		return
+	print("Loading save file")
 	save_game.open("user://savegame.save", File.READ)
 	stage = int(save_game.get_line())
 	
