@@ -1,0 +1,1071 @@
+[gd_scene load_steps=48 format=2]
+
+[ext_resource path="res://presets/font16px.tres" type="DynamicFont" id=1]
+[ext_resource path="res://presets/font48px.tres" type="DynamicFont" id=2]
+[ext_resource path="res://presets/font32px.tres" type="DynamicFont" id=3]
+[ext_resource path="res://graphic/tamagotchi/tama/egg.png" type="Texture" id=4]
+[ext_resource path="res://NovaMono-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://graphic/clicker/btn2_alt_pressed.png" type="Texture" id=6]
+[ext_resource path="res://scripts/main.gd" type="Script" id=7]
+[ext_resource path="res://graphic/clicker/btn_green.png" type="Texture" id=8]
+[ext_resource path="res://graphic/clicker/helpers/s0.png" type="Texture" id=9]
+[ext_resource path="res://graphic/clicker/helpers/s1.png" type="Texture" id=10]
+[ext_resource path="res://graphic/tamagotchi/tama/angry_1.png" type="Texture" id=11]
+[ext_resource path="res://graphic/tamagotchi/tama/angry_2.png" type="Texture" id=12]
+[ext_resource path="res://graphic/clicker/window.png" type="Texture" id=13]
+[ext_resource path="res://graphic/skills/progEXP.png" type="Texture" id=14]
+[ext_resource path="res://sound/coin.wav" type="AudioStream" id=15]
+[ext_resource path="res://sound/altcoin.wav" type="AudioStream" id=16]
+[ext_resource path="res://graphic/clicker/btn_green_pressed.png" type="Texture" id=17]
+[ext_resource path="res://presets/BTN_STYLE_NORM.tres" type="StyleBox" id=18]
+[ext_resource path="res://presets/BTN_STYLE_PRESS.tres" type="StyleBox" id=19]
+[ext_resource path="res://presets/BTN_STYLE_HOVER.tres" type="StyleBox" id=20]
+[ext_resource path="res://presets/font16px + outline2px.tres" type="DynamicFont" id=21]
+[ext_resource path="res://graphic/skills/over.png" type="Texture" id=22]
+[ext_resource path="res://graphic/skills/under.png" type="Texture" id=23]
+[ext_resource path="res://graphic/clicker/btn2_alt.png" type="Texture" id=24]
+[ext_resource path="res://graphic/tamagotchi/tama/sad.png" type="Texture" id=25]
+[ext_resource path="res://graphic/tamagotchi/tama/sleeping.png" type="Texture" id=26]
+[ext_resource path="res://graphic/tamagotchi/tama/stink_lines.png" type="Texture" id=27]
+[ext_resource path="res://graphic/tamagotchi/tama/happy.png" type="Texture" id=28]
+[ext_resource path="res://graphic/tamagotchi/tama/neutral.png" type="Texture" id=29]
+[ext_resource path="res://scenes/tama.gd" type="Script" id=30]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 0.8, 0.2, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 0.882353, 0.521569, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0.74902, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.247059, 0.247059, 0.247059, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.552941, 0.552941, 0.552941, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.168627, 0.168627, 0.168627, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 0, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 0.670588, 0.670588, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.670588, 0, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.305882, 0.415686, 1, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.490196, 0.737255, 1, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0, 0.113725, 0.74902, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.337255, 0.654902, 0.298039, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.745098, 1, 0.713726, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.0666667, 0.647059, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "angry",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "egg",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "happy",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "neutral",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "sad",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "sleeping",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 800, 450 )
+current = true
+
+[node name="blip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -16.0
+
+[node name="click" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 597.881
+margin_top = 256.0
+margin_right = 997.881
+margin_bottom = 656.0
+grow_horizontal = 0
+grow_vertical = 2
+rect_pivot_offset = Vector2( 200, 200 )
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+
+[node name="clickG" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 2200.0
+margin_top = 256.0
+margin_right = 2600.0
+margin_bottom = 656.0
+grow_horizontal = 0
+grow_vertical = 2
+rect_pivot_offset = Vector2( 200, 200 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 17 )
+expand = true
+stretch_mode = 5
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="left" type="Button" parent="HUD"]
+margin_left = 192.0
+margin_top = 384.0
+margin_right = 320.0
+margin_bottom = 576.0
+rect_pivot_offset = Vector2( 64, 96 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/disabled = ExtResource( 18 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="right" type="Button" parent="HUD"]
+margin_left = 1280.0
+margin_top = 384.0
+margin_right = 1408.0
+margin_bottom = 576.0
+rect_pivot_offset = Vector2( 64, 96 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/disabled = ExtResource( 18 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = ">"
+
+[node name="upgrade" type="Button" parent="HUD"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -224.0
+margin_top = -8.0
+margin_right = 224.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 18 )
+text = "Upgrade!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up_cost" type="Label" parent="HUD"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 232.0
+margin_right = 472.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 3 )
+text = "Cost: 10"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="total_pts" type="Label" parent="HUD"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -224.0
+margin_top = 128.0
+margin_right = 224.0
+margin_bottom = 195.0
+custom_fonts/font = SubResource( 1 )
+text = "TOTAL PTS"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="skill" type="ColorRect" parent="HUD"]
+margin_left = 1600.0
+margin_top = 136.0
+margin_right = 2000.0
+margin_bottom = 456.0
+color = Color( 1, 0.882353, 0.521569, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="expand" type="Button" parent="HUD/skill"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -432.0
+margin_top = 439.0
+margin_right = -340.0
+margin_bottom = 477.0
+rect_rotation = -90.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
+enabled_focus_mode = 0
+text = "Skill"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="skill2" type="ColorRect" parent="HUD/skill"]
+margin_right = 400.0
+margin_bottom = 440.0
+color = Color( 1, 0.882353, 0.521569, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="log" type="ColorRect" parent="HUD"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -436.0
+margin_right = 400.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="expand" type="Button" parent="HUD/log"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -139.0
+margin_right = 94.0
+margin_bottom = -99.0
+rect_rotation = 90.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
+enabled_focus_mode = 0
+text = "Log"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="log_output" type="TextEdit" parent="HUD/log"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_right = 200.0
+margin_bottom = 384.0
+custom_fonts/font = ExtResource( 1 )
+readonly = true
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_input" type="TextEdit" parent="HUD/log"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -52.0
+margin_right = 200.0
+focus_mode = 1
+custom_fonts/font = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="debug" type="Button" parent="HUD"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -450.0
+margin_right = -64.0
+margin_bottom = -386.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "D"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pause" type="Button" parent="HUD"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -64.0
+margin_bottom = 64.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "||"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="upgrade_bg" type="TextureRect" parent="HUD"]
+margin_left = -400.0
+margin_bottom = 320.0
+texture = ExtResource( 13 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="expand" type="Button" parent="HUD/upgrade_bg"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 32.0
+margin_top = 8.0
+margin_right = 127.0
+margin_bottom = 46.0
+rect_rotation = 90.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+enabled_focus_mode = 0
+text = "Helpers"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="upgrade_bg2" type="TextureRect" parent="HUD/upgrade_bg"]
+margin_right = 400.0
+margin_bottom = 320.0
+texture = ExtResource( 13 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="boop" type="AudioStreamPlayer" parent="HUD/upgrade_bg"]
+stream = ExtResource( 16 )
+volume_db = -16.0
+
+[node name="helper_1" type="TextureRect" parent="HUD/upgrade_bg"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 120.0
+margin_bottom = 120.0
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pay" type="Button" parent="HUD/upgrade_bg/helper_1"]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 200.0
+margin_bottom = 48.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "Pay 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sack" type="Button" parent="HUD/upgrade_bg/helper_1"]
+margin_left = 112.0
+margin_top = 56.0
+margin_right = 200.0
+margin_bottom = 96.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "Sack 1"
+
+[node name="total" type="Label" parent="HUD/upgrade_bg/helper_1"]
+margin_left = 216.0
+margin_top = 8.0
+margin_right = 344.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 21 )
+text = "Total: "
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="price" type="Label" parent="HUD/upgrade_bg/helper_1"]
+margin_left = 216.0
+margin_top = 40.0
+margin_right = 336.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 21 )
+text = "Price: "
+valign = 1
+
+[node name="gsec" type="Label" parent="HUD/upgrade_bg/helper_1"]
+margin_left = 216.0
+margin_top = 72.0
+margin_right = 336.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 21 )
+text = "G/sec:"
+valign = 1
+
+[node name="helper_2" type="TextureRect" parent="HUD/upgrade_bg"]
+margin_left = 16.0
+margin_top = 136.0
+margin_right = 120.0
+margin_bottom = 240.0
+texture = ExtResource( 10 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pay2" type="Button" parent="HUD/upgrade_bg/helper_2"]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 200.0
+margin_bottom = 48.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "Pay 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sack2" type="Button" parent="HUD/upgrade_bg/helper_2"]
+margin_left = 112.0
+margin_top = 56.0
+margin_right = 200.0
+margin_bottom = 96.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "Sack 1"
+
+[node name="total2" type="Label" parent="HUD/upgrade_bg/helper_2"]
+margin_left = 216.0
+margin_top = 8.0
+margin_right = 344.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 21 )
+text = "Total: "
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="price2" type="Label" parent="HUD/upgrade_bg/helper_2"]
+margin_left = 216.0
+margin_top = 40.0
+margin_right = 336.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 21 )
+text = "Price: "
+valign = 1
+
+[node name="gsec2" type="Label" parent="HUD/upgrade_bg/helper_2"]
+margin_left = 216.0
+margin_top = 72.0
+margin_right = 336.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 21 )
+text = "G/sec:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shop" type="ColorRect" parent="HUD"]
+margin_left = -400.0
+margin_top = 96.0
+margin_bottom = 416.0
+color = Color( 0.490196, 0.737255, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="expand" type="Button" parent="HUD/shop"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 32.0
+margin_top = 9.0
+margin_right = 126.0
+margin_bottom = 47.0
+rect_rotation = 90.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 13 )
+enabled_focus_mode = 0
+text = "Shop"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shop2" type="ColorRect" parent="HUD/shop"]
+margin_right = 400.0
+margin_bottom = 320.0
+color = Color( 0.490196, 0.737255, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="wallet" type="ColorRect" parent="HUD"]
+margin_left = -400.0
+margin_top = 192.0
+margin_bottom = 512.0
+color = Color( 0.745098, 1, 0.713726, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="expand" type="Button" parent="HUD/wallet"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 32.0
+margin_top = 9.0
+margin_right = 126.0
+margin_bottom = 47.0
+rect_rotation = 90.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 16 )
+enabled_focus_mode = 0
+text = "Wallet"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="wallet2" type="ColorRect" parent="HUD/wallet"]
+margin_right = 400.0
+margin_bottom = 320.0
+color = Color( 0.745098, 1, 0.713726, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="red_pts" type="Label" parent="HUD/wallet"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_right = 200.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 1 )
+text = "TOTAL PTS"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="green_pts" type="Label" parent="HUD/wallet"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_top = 72.0
+margin_right = 200.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 1 )
+text = "TOTAL PTS"
+align = 1
+valign = 1
+
+[node name="exp" type="TextureProgress" parent="HUD"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -224.0
+margin_top = -36.0
+margin_right = 224.0
+margin_bottom = -4.0
+texture_under = ExtResource( 23 )
+texture_over = ExtResource( 22 )
+texture_progress = ExtResource( 14 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lvl" type="Label" parent="HUD/exp"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+custom_fonts/font = ExtResource( 1 )
+text = "LVL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="xp" type="Label" parent="HUD/exp"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -96.0
+margin_top = -16.0
+margin_right = 96.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 21 )
+text = "EXP"
+align = 1
+valign = 1
+
+[node name="tama" type="KinematicBody2D" parent="HUD"]
+position = Vector2( 64, 832 )
+scale = Vector2( 4, 4 )
+z_index = 8
+input_pickable = true
+script = ExtResource( 30 )
+
+[node name="sprite" type="AnimatedSprite" parent="HUD/tama"]
+frames = SubResource( 17 )
+animation = "egg"
+
+[node name="stink" type="Sprite" parent="HUD/tama/sprite"]
+visible = false
+texture = ExtResource( 27 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HUD/tama"]
+position = Vector2( 2, 16 )
+polygon = PoolVector2Array( 0, -1.52588e-05, -4, 0, -10, -2, -14, -10, -14, -20, -10, -26, -4, -28, 2, -28, 8, -22, 8, -10, 6, -4 )
+
+[node name="pause" type="CanvasLayer" parent="."]
+
+[node name="pause" type="Control" parent="pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Overlay" type="ColorRect" parent="pause/pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.647059 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="ColorRect" parent="pause/pause/Overlay"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -225.0
+margin_top = -400.0
+margin_right = 225.0
+margin_bottom = 400.0
+rect_pivot_offset = Vector2( 225, 400 )
+color = Color( 0.235294, 0.235294, 0.235294, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="close" type="Button" parent="pause/pause/Overlay/BG"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -160.0
+margin_top = -82.0
+margin_right = 160.0
+margin_bottom = -18.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resume" type="Button" parent="pause/pause/Overlay/BG"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -258.0
+margin_right = 160.0
+margin_bottom = -130.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "Resume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save" type="Button" parent="pause/pause/Overlay/BG"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -66.0
+margin_right = 160.0
+margin_bottom = -2.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "Save Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="load" type="Button" parent="pause/pause/Overlay/BG"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -130.0
+margin_right = 160.0
+margin_bottom = -66.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "Load Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="options" type="Button" parent="pause/pause/Overlay/BG"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = 62.0
+margin_right = 160.0
+margin_bottom = 126.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "Options"
+
+[node name="notice" type="Label" parent="pause/pause/Overlay/BG"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -160.0
+margin_top = 78.0
+margin_right = 160.0
+margin_bottom = 142.0
+custom_fonts/font = ExtResource( 1 )
+text = "(Game is still idling)"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stuckpet" type="Button" parent="pause/pause/Overlay/BG"]
+margin_left = 65.0
+margin_top = 590.0
+margin_right = 385.0
+margin_bottom = 654.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "Help! My Pet is Stuck!"
+
+[node name="Options" type="ColorRect" parent="pause/pause/Overlay"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -288.0
+margin_top = -400.0
+margin_right = 288.0
+margin_bottom = 400.0
+rect_pivot_offset = Vector2( 225, 400 )
+color = Color( 0.235294, 0.235294, 0.235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="full_toggle" type="CheckButton" parent="pause/pause/Overlay/Options"]
+margin_left = 128.0
+margin_top = 142.0
+margin_right = 448.0
+margin_bottom = 206.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+pressed = true
+enabled_focus_mode = 0
+text = "Toggle Fullscreen "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sm_cur_toggle" type="CheckButton" parent="pause/pause/Overlay/Options"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -194.0
+margin_right = 160.0
+margin_bottom = -130.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+enabled_focus_mode = 0
+text = "Toggle Small Cursor "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="debug_toggle" type="CheckButton" parent="pause/pause/Overlay/Options"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -130.0
+margin_right = 160.0
+margin_bottom = -66.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+enabled_focus_mode = 0
+text = "Debug Mode"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="del_save" type="Button" parent="pause/pause/Overlay/Options"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -96.0
+margin_top = -130.0
+margin_right = 96.0
+margin_bottom = -106.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "Delete Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="Button" parent="pause/pause/Overlay/Options"]
+margin_left = 320.0
+margin_top = 14.0
+margin_right = 512.0
+margin_bottom = 78.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "Back"
+
+[connection signal="button_up" from="click" to="." method="_on_click_button_up" binds= [ "red" ]]
+[connection signal="button_up" from="clickG" to="." method="_on_click_button_up" binds= [ "green" ]]
+[connection signal="button_up" from="HUD/left" to="." method="pan" binds= [ "l" ]]
+[connection signal="button_up" from="HUD/right" to="." method="pan" binds= [ "r" ]]
+[connection signal="button_up" from="HUD/upgrade" to="." method="_on_upgrade_button_up"]
+[connection signal="button_up" from="HUD/skill/expand" to="." method="_on_expand_button_up" binds= [ "skill" ]]
+[connection signal="button_up" from="HUD/log/expand" to="." method="_on_expand_button_up" binds= [ "log" ]]
+[connection signal="focus_entered" from="HUD/log/text_input" to="." method="_on_text_input_focus_entered"]
+[connection signal="focus_exited" from="HUD/log/text_input" to="." method="_on_text_input_focus_exited"]
+[connection signal="button_up" from="HUD/debug" to="." method="_on_debug_button_up"]
+[connection signal="button_up" from="HUD/pause" to="." method="_on_pause_button_up"]
+[connection signal="button_up" from="HUD/upgrade_bg/expand" to="." method="_on_expand_button_up" binds= [ "helpers" ]]
+[connection signal="button_up" from="HUD/upgrade_bg/helper_1/pay" to="." method="_on_pay_button_up"]
+[connection signal="button_up" from="HUD/upgrade_bg/helper_1/sack" to="." method="_on_sack_button_up"]
+[connection signal="button_up" from="HUD/upgrade_bg/helper_2/pay2" to="." method="_on_pay2_button_up"]
+[connection signal="button_up" from="HUD/upgrade_bg/helper_2/sack2" to="." method="_on_sack2_button_up"]
+[connection signal="button_up" from="HUD/shop/expand" to="." method="_on_expand_button_up" binds= [ "shop" ]]
+[connection signal="button_up" from="HUD/wallet/expand" to="." method="_on_expand_button_up" binds= [ "wallet" ]]
+[connection signal="mouse_entered" from="HUD/tama" to="HUD/tama" method="_on_tama_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/tama" to="." method="_on_tama_mouse_exited"]
+[connection signal="mouse_exited" from="HUD/tama" to="HUD/tama" method="_on_tama_mouse_exited"]
+[connection signal="button_up" from="pause/pause/Overlay/BG/close" to="." method="_on_close_button_up"]
+[connection signal="button_up" from="pause/pause/Overlay/BG/resume" to="." method="_on_resume_button_up"]
+[connection signal="button_up" from="pause/pause/Overlay/BG/save" to="." method="_on_save_button_up"]
+[connection signal="button_up" from="pause/pause/Overlay/BG/load" to="." method="_on_load_button_up"]
+[connection signal="button_up" from="pause/pause/Overlay/BG/options" to="." method="_on_options_button_up"]
+[connection signal="button_up" from="pause/pause/Overlay/BG/stuckpet" to="." method="_on_stuckpet_button_up"]
+[connection signal="toggled" from="pause/pause/Overlay/Options/full_toggle" to="." method="_on_full_toggle_toggled"]
+[connection signal="toggled" from="pause/pause/Overlay/Options/sm_cur_toggle" to="." method="_on_sm_cur_toggle_toggled"]
+[connection signal="toggled" from="pause/pause/Overlay/Options/debug_toggle" to="." method="_on_debug_toggle_toggled"]
+[connection signal="button_up" from="pause/pause/Overlay/Options/del_save" to="." method="_on_del_save_button_up"]
+[connection signal="button_up" from="pause/pause/Overlay/Options/back" to="." method="_on_back_button_up"]
+[connection signal="button_up" from="pause/pause/Overlay/Options/back" to="." method="_on_Button_button_up"]
